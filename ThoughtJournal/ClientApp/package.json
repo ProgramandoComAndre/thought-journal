@@ -11,18 +11,22 @@
         "format": "eslint src --fix && prettier --write src"
     },
     "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
         "@inertiajs/react": "^2.0.3",
+        "@mui/icons-material": "^9.5.0",
+        "@mui/material": "^9.5.0",
         "axios": "^1.10.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
     },
     "devDependencies": {
+        "@inertiacore/vite-plugin": "^2.0.0",
         "@types/react-dom": "^19.0.3",
         "@vitejs/plugin-react": "^4.0.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^5.2.0",
-        "@inertiacore/vite-plugin": "^2.0.0",
         "prettier": "^3.6.2",
         "prettier-plugin-organize-imports": "^4.3.0",
         "typescript-eslint": "^8.44.0",
