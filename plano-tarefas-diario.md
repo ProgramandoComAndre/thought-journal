@@ -40,12 +40,10 @@ Arquitetura MVC
 - [x] **2.2** Criar projeto Inertia
 - [x] **2.3** Criar `ThoughtJournal.Domain.Tests` (`dotnet new xunit`) com referência ao Domain.
 - [x] **2.4** Juntar todos os projetos à solução (`dotnet sln add ...`).
-- [ ] **2.5** Instalar no frontend: `@inertiajs/react`, `@mui/material`, `@emotion/react`, `@emotion/styled`, `@mui/icons-material`, `@mui/x-date-pickers` e `dayjs`.
-(`createInertiaApp` com resolução de páginas em `Pages/`).
-- [ ] **2.6** Criar o layout base em React (`AppLayout`): barra de topo com o nome da app e as ligações "Pensamentos" e "Etiquetas".
-- [ ] **2.7** Criar uma página `Pages/Home.tsx` e uma ação no controlador que a devolve com `Inertia.Render`.
-- [ ] **2.8** Correr a app e confirmar que a página React aparece servida pelo ASP.NET Core.
-- [ ] **2.9** Configurar o tema MUI (cores, tipografia) num ficheiro `theme.ts`.
+- [ ] **2.5** Criar o layout base em React (`AppLayout`): barra de topo com o nome da app e as ligações "Pensamentos" e "Etiquetas".
+- [ ] **2.6** Criar uma página `Pages/Home.tsx` e uma ação no controlador que a devolve com `Inertia.Render`.
+- [ ] **2.7** Correr a app e confirmar que a página React aparece servida pelo ASP.NET Core.
+- [ ] **2.8** Configurar o tema MUI (cores, tipografia) num ficheiro `theme.ts`.
 
 **Pronto quando:** `dotnet run` abre uma página React dentro do layout, sem erros na consola.
 
