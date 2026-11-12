@@ -14,17 +14,17 @@ Nome provisório do projeto: **ThoughtJournal**
 - [x] **0.3** Juntar ao `.gitignore` as pastas do frontend: `node_modules/`, `wwwroot/build/` (ou a pasta de saída do Vite que usares).
 - [x] **0.4** Decidir a convenção de commits. Sugestão: *Conventional Commits* (`feat:`, `fix:`, `test:`, `docs:`, `chore:`).
 
-**Pronto quando:** o repositório existe e o primeiro commit está feito.
+**Pronto quando:** o repositório existe, o quadro tem as issues e o primeiro commit está feito.
 
 ---
 
 ## Fase 1 – Ambiente de desenvolvimento (≈ 1 h)
 
-- [ ] **1.1** Instalar ou confirmar o **.NET 10 SDK**: `dotnet --version`.
-- [ ] **1.2** Instalar ou confirmar o **Node.js LTS**: `node --version` e `npm --version`.
-- [ ] **1.3** Instalar ou confirmar o **Docker Desktop**: `docker --version`.
-- [ ] **1.4** Instalar a ferramenta do EF Core: `dotnet tool install --global dotnet-ef`.
-- [ ] **1.5** Abrir o projeto no IDE que preferires (Rider, Visual Studio ou VS Code).
+- [x] **1.1** Instalar ou confirmar o **.NET 10 SDK**: `dotnet --version`.
+- [x] **1.2** Instalar ou confirmar o **Node.js LTS**: `node --version` e `npm --version`.
+- [x] **1.3** Instalar ou confirmar o **Docker Desktop**: `docker --version`.
+- [x] **1.4** Instalar a ferramenta do EF Core: `dotnet tool install --global dotnet-ef`.
+- [x] **1.5** Abrir o projeto no IDE que preferires (Rider, Visual Studio ou VS Code).
 
 **Pronto quando:** todos os comandos acima devolvem uma versão.
 
