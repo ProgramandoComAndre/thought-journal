@@ -1,12 +1,9 @@
 # Diário de Pensamentos – Plano de tarefas do início ao fim
 
-Nome provisório do projeto: **ThoughtJournal** (troca por outro quando quiseres; basta substituir nos comandos).
-
+Nome provisório do projeto: **ThoughtJournal**
 **Âmbito do MVP:** registar pensamentos (título, data, contexto, intensidade, descrição), acrescentar reflexões com etiquetas, histórico com filtros e exportação de vários pensamentos para PDF. Um só utilizador, sem autenticação.
 
 **Stack:** ASP.NET Core (.NET 10) + InertiaCore + React + TypeScript + MUI + Vite · EF Core + PostgreSQL (Docker) · QuestPDF · xUnit · GitHub Actions.
-
-**Ritmo previsto:** cerca de 35–40 horas, ou seja, 3 a 4 semanas a 1–2 horas por dia. Cada fase termina com algo a funcionar e um commit.
 
 ---
 
@@ -270,30 +267,20 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
   - [ ] Funcionalidades.
   - [ ] Stack.
   - [ ] Arquitetura: diagrama simples das camadas e do agregado `Thought` → `Reflection` → `Tag`.
-  - [ ] Decisões principais, com ligação aos ADRs: porquê um monólito com Inertia em vez de API REST + SPA; porquê o agregado; como são tratados os erros de domínio; porquê ainda não há autenticação.
+  - [ ] Decisões principais: porquê um monólito com Inertia em vez de API REST + SPA; porquê o agregado; como são tratados os erros de domínio; porquê ainda não há autenticação.
   - [ ] Como correr localmente (com Docker e sem Docker).
   - [ ] Como correr os testes.
-  - [ ] *Future work*: autenticação, evolução da intensidade ao longo do tempo, deploy público, modo escuro.
-- [ ] **12.2** ADRs escritos: `0001-domain-errors`, `0002-inertia-modern-monolith`, `0003-thought-aggregate`, `0004-no-auth-in-mvp`.
+  - [ ] *Future work*: autenticação, evolução da intensidade ao longo do tempo, deploy público, modo escuro..
 - [ ] **12.3** Rever o código uma última vez: nomes, código morto, comentários desnecessários.
 - [ ] **12.4** Criar a tag `v1.0.0` e uma *Release* no GitHub com as notas.
 - [ ] **12.5** Fixar (pin) o repositório no teu perfil do GitHub.
 - [ ] **12.6** Acrescentar o projeto ao LinkedIn (secção Projetos) e, se couber, ao CV.
 - [ ] **12.7** Gravar um vídeo de demonstração para o YouTube e escrever o post no LinkedIn com a ligação.
 
-**Pronto quando:** alguém que não te conhece abre o repositório, percebe o projeto em 30 segundos e consegue corrê-lo.
-
----
-
-## Depois do MVP (só se tiveres energia)
+## Depois do MVP
 - Autenticação com ASP.NET Core Identity e um dono por pensamento (migração EF Core).
 - Gráfico da evolução da intensidade ao longo do tempo.
 - Deploy público (só com dados de demonstração ou depois de existir autenticação).
 - Modo escuro.
 - Exportação de um intervalo de datas inteiro.
 
-## Regras para não perderes o fôlego
-1. Uma fase de cada vez. Não comeces a seguinte sem a anterior estar "pronta".
-2. Se uma tarefa demorar mais do dobro do previsto, simplifica-a ou passa-a para "Depois do MVP".
-3. Faz commit no fim de cada sessão, mesmo que pequeno.
-4. Continua a enviar candidaturas em paralelo; o projeto não é condição para te candidatares.
