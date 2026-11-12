@@ -12,7 +12,7 @@ Nome provisório do projeto: **ThoughtJournal**
 - [x] **0.1** Escolher o nome final do projeto.
 - [x] **0.2** Criar o repositório público no GitHub com `README.md`, licença MIT e `.gitignore` para Visual Studio/.NET.
 - [ ] **0.3** Juntar ao `.gitignore` as pastas do frontend: `node_modules/`, `wwwroot/build/` (ou a pasta de saída do Vite que usares).
-- [ ] **0.4** Decidir a convenção de commits. Sugestão: *Conventional Commits* (`feat:`, `fix:`, `test:`, `docs:`, `chore:`).
+- [x] **0.4** Decidir a convenção de commits. Sugestão: *Conventional Commits* (`feat:`, `fix:`, `test:`, `docs:`, `chore:`).
 
 **Pronto quando:** o repositório existe, o quadro tem as issues e o primeiro commit está feito.
 
