@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ThoughJournal.Tests/ThoughJournal.Tests.csproj" />
+  <Project Path="ThoughtJournal/ThoughtJournal.csproj" />
+</Solution>

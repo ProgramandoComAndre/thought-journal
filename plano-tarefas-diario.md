@@ -12,7 +12,7 @@ Nome provisório do projeto: **ThoughtJournal**
 - [x] **0.1** Escolher o nome final do projeto.
 - [x] **0.2** Criar o repositório público no GitHub com `README.md`, licença MIT e `.gitignore` para Visual Studio/.NET.
 - [x] **0.3** Juntar ao `.gitignore` as pastas do frontend: `node_modules/`, `wwwroot/build/` (ou a pasta de saída do Vite que usares).
-- [x] **0.4** Decidir a convenção de commits. Sugestão: *Conventional Commits* (`feat:`, `fix:`, `test:`, `docs:`, `chore:`).
+- [x] **0.4** Decidir a convenção de commits. Sugestão: _Conventional Commits_ (`feat:`, `fix:`, `test:`, `docs:`, `chore:`).
 
 **Pronto quando:** o repositório existe, o quadro tem as issues e o primeiro commit está feito.
 
@@ -36,18 +36,16 @@ Estrutura recomendada (Clean Architecture leve, três projetos e testes):
 
 Arquitetura MVC
 
-- [ ] **2.1** Criar a solução: `dotnet new sln -n ThoughtJournal`.
-- [ ] **2.2** Criar `ThoughtJournal.Web` (`dotnet new mvc`) com referência ao Domain e ao Infrastructure.
-- [ ] **2.3** Criar `ThoughtJournal.Domain.Tests` (`dotnet new xunit`) com referência ao Domain.
-- [ ] **2.4** Juntar todos os projetos à solução (`dotnet sln add ...`).
-- [ ] **2.5** Em `Web`, instalar o pacote NuGet do InertiaCore e configurá-lo no `Program.cs` (serviços, middleware e Vite helper), como fizeste nos vídeos.
-- [ ] **2.6** Criar a pasta `ClientApp` com Vite + React + TypeScript.
-- [ ] **2.7** Instalar no frontend: `@inertiajs/react`, `@mui/material`, `@emotion/react`, `@emotion/styled`, `@mui/icons-material`, `@mui/x-date-pickers` e `dayjs`.
-- [ ] **2.8** Configurar o `vite.config.ts` para gerar os ficheiros em `wwwroot` e o ponto de entrada da app Inertia (`createInertiaApp` com resolução de páginas em `Pages/`).
-- [ ] **2.9** Criar o layout base em React (`AppLayout`): barra de topo com o nome da app e as ligações "Pensamentos" e "Etiquetas".
-- [ ] **2.10** Criar uma página `Pages/Home.tsx` e uma ação no controlador que a devolve com `Inertia.Render`.
-- [ ] **2.11** Correr a app e confirmar que a página React aparece servida pelo ASP.NET Core.
-- [ ] **2.12** Configurar o tema MUI (cores, tipografia) num ficheiro `theme.ts`.
+- [x] **2.1** Criar a solução: `dotnet new sln -n ThoughtJournal`.
+- [x] **2.2** Criar projeto Inertia
+- [x] **2.3** Criar `ThoughtJournal.Domain.Tests` (`dotnet new xunit`) com referência ao Domain.
+- [x] **2.4** Juntar todos os projetos à solução (`dotnet sln add ...`).
+- [ ] **2.5** Instalar no frontend: `@inertiajs/react`, `@mui/material`, `@emotion/react`, `@emotion/styled`, `@mui/icons-material`, `@mui/x-date-pickers` e `dayjs`.
+(`createInertiaApp` com resolução de páginas em `Pages/`).
+- [ ] **2.6** Criar o layout base em React (`AppLayout`): barra de topo com o nome da app e as ligações "Pensamentos" e "Etiquetas".
+- [ ] **2.7** Criar uma página `Pages/Home.tsx` e uma ação no controlador que a devolve com `Inertia.Render`.
+- [ ] **2.8** Correr a app e confirmar que a página React aparece servida pelo ASP.NET Core.
+- [ ] **2.9** Configurar o tema MUI (cores, tipografia) num ficheiro `theme.ts`.
 
 **Pronto quando:** `dotnet run` abre uma página React dentro do layout, sem erros na consola.
 
@@ -69,6 +67,7 @@ Arquitetura MVC
 Escreve primeiro o teste, vê-o falhar e só depois implementa.
 
 ### 4.1 Entidade `Thought` (raiz do agregado)
+
 - [ ] **4.1.1** Propriedades: `Id`, `Title`, `OccurredAt`, `Context`, `Intensity`, `Description`, `CreatedAt`, `UpdatedAt` e a coleção `Reflections` (só de leitura para fora).
 - [ ] **4.1.2** Construtor ou método de fábrica `Thought.Create(...)` que valida tudo.
 - [ ] **4.1.3** Método `Update(...)` para editar título, data, contexto, intensidade e descrição.
@@ -76,14 +75,17 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
 - [ ] **4.1.5** Métodos `EditReflection(...)` e `RemoveReflection(...)`.
 
 ### 4.2 Entidade `Reflection`
+
 - [ ] **4.2.1** Propriedades: `Id`, `ThoughtId`, `Content`, `CreatedAt`, `UpdatedAt`, `Tags`.
 - [ ] **4.2.2** Só pode ser criada através de `Thought.AddReflection` (construtor `internal`).
 
 ### 4.3 Entidade `Tag`
+
 - [ ] **4.3.1** Propriedades: `Id`, `Name`, `NormalizedName` (minúsculas, sem espaços nas pontas).
 - [ ] **4.3.2** Método de fábrica que normaliza o nome.
 
 ### 4.4 Testes xUnit (um por regra)
+
 - [ ] Criar um pensamento válido funciona.
 - [ ] Título vazio ou só com espaços é rejeitado.
 - [ ] Título com mais de 120 caracteres é rejeitado.
@@ -116,7 +118,7 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
 - [ ] **5.4** Registar o `AppDbContext` no `Program.cs` com a connection string dos user-secrets.
 - [ ] **5.5** Criar a primeira migração: `dotnet ef migrations add InitialCreate -p src/ThoughtJournal.Infrastructure -s src/ThoughtJournal.Web`.
 - [ ] **5.6** Aplicar: `dotnet ef database update ...` e confirmar as tabelas na base de dados.
-- [ ] **5.7** Criar um *seeder* de dados de demonstração **fictícios** (8–10 pensamentos com reflexões e etiquetas), que só corre em Development e só se a base estiver vazia.
+- [ ] **5.7** Criar um _seeder_ de dados de demonstração **fictícios** (8–10 pensamentos com reflexões e etiquetas), que só corre em Development e só se a base estiver vazia.
 - [ ] **5.8** Criar a classe `ThoughtService` (ou repositório) com os métodos: listar com filtros, obter por id com reflexões e etiquetas, criar, atualizar, apagar. Para as etiquetas, um método que reutiliza uma etiqueta existente ou cria uma nova.
 
 **Pronto quando:** ao arrancar a app, a base tem os dados de demonstração.
@@ -126,6 +128,7 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
 ## Fase 6 – Pensamentos: criar, ver, editar e apagar (≈ 5–6 h)
 
 ### Backend (`ThoughtsController`)
+
 - [ ] **6.1** `GET /thoughts` → `Inertia.Render("Thoughts/Index", ...)` com a lista (título, data, intensidade, número de reflexões).
 - [ ] **6.2** `GET /thoughts/create` → página do formulário.
 - [ ] **6.3** `POST /thoughts` → valida, cria, redireciona para o detalhe; em caso de erro, devolve os erros de validação ao Inertia.
@@ -136,6 +139,7 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
 - [ ] **6.8** Partilhar a mensagem flash e os erros com todas as páginas (shared props do Inertia).
 
 ### Frontend (React + MUI)
+
 - [ ] **6.9** Tipos TypeScript para os props de cada página (`ThoughtListItem`, `ThoughtDetail`, etc.).
 - [ ] **6.10** `Pages/Thoughts/Index.tsx`: lista em cartões ou tabela, com a intensidade visível (por exemplo, um `Chip` com cor), botão "Novo pensamento".
 - [ ] **6.11** Componente `ThoughtForm` reutilizado em criar e editar, com `useForm` do Inertia:
@@ -157,6 +161,7 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
 ## Fase 7 – Reflexões e etiquetas (≈ 4–5 h)
 
 ### Backend
+
 - [ ] **7.1** `POST /thoughts/{id}/reflections` → acrescenta uma reflexão com etiquetas (nomes); cria as etiquetas que ainda não existem.
 - [ ] **7.2** `PUT /thoughts/{id}/reflections/{reflectionId}` → editar.
 - [ ] **7.3** `DELETE /thoughts/{id}/reflections/{reflectionId}` → remover.
@@ -165,6 +170,7 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
 - [ ] **7.6** Enviar a lista de etiquetas existentes para a página de detalhe (para sugestões).
 
 ### Frontend
+
 - [ ] **7.7** Na página `Show`, lista de reflexões por ordem cronológica, cada uma com data e etiquetas (`Chip`).
 - [ ] **7.8** Formulário para nova reflexão: texto multilinha + `Autocomplete` do MUI com `freeSolo` e `multiple`, para escolher etiquetas existentes ou escrever novas.
 - [ ] **7.9** Editar uma reflexão no próprio sítio (o cartão passa a formulário) e apagar com confirmação.
@@ -257,17 +263,17 @@ Escreve primeiro o teste, vê-o falhar e só depois implementa.
   - [ ] Decisões principais: porquê um monólito com Inertia em vez de API REST + SPA; porquê o agregado; como são tratados os erros de domínio; porquê ainda não há autenticação.
   - [ ] Como correr localmente (com Docker e sem Docker).
   - [ ] Como correr os testes.
-  - [ ] *Future work*: autenticação, evolução da intensidade ao longo do tempo, deploy público, modo escuro..
+  - [ ] _Future work_: autenticação, evolução da intensidade ao longo do tempo, deploy público, modo escuro..
 - [ ] **12.3** Rever o código uma última vez: nomes, código morto, comentários desnecessários.
-- [ ] **12.4** Criar a tag `v1.0.0` e uma *Release* no GitHub com as notas.
+- [ ] **12.4** Criar a tag `v1.0.0` e uma _Release_ no GitHub com as notas.
 - [ ] **12.5** Fixar (pin) o repositório no teu perfil do GitHub.
 - [ ] **12.6** Acrescentar o projeto ao LinkedIn (secção Projetos) e, se couber, ao CV.
 - [ ] **12.7** Gravar um vídeo de demonstração para o YouTube e escrever o post no LinkedIn com a ligação.
 
 ## Depois do MVP
+
 - Autenticação com ASP.NET Core Identity e um dono por pensamento (migração EF Core).
 - Gráfico da evolução da intensidade ao longo do tempo.
 - Deploy público (só com dados de demonstração ou depois de existir autenticação).
 - Modo escuro.
 - Exportação de um intervalo de datas inteiro.
-
