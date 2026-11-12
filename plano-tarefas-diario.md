@@ -34,33 +34,20 @@ Nome provisório do projeto: **ThoughtJournal**
 
 Estrutura recomendada (Clean Architecture leve, três projetos e testes):
 
-```
-ThoughtJournal.sln
-src/
-  ThoughtJournal.Domain/          entidades e regras de negócio (sem dependências)
-  ThoughtJournal.Infrastructure/  EF Core, PostgreSQL, geração de PDF
-  ThoughtJournal.Web/             ASP.NET Core + InertiaCore + React (ClientApp)
-tests/
-  ThoughtJournal.Domain.Tests/
-  ThoughtJournal.Web.Tests/       testes de integração (Fase 10)
-docs/adr/
-docker-compose.yml
-```
+Arquitetura MVC
 
 - [ ] **2.1** Criar a solução: `dotnet new sln -n ThoughtJournal`.
-- [ ] **2.2** Criar `ThoughtJournal.Domain` (`dotnet new classlib`).
-- [ ] **2.3** Criar `ThoughtJournal.Infrastructure` (`dotnet new classlib`) com referência ao Domain.
-- [ ] **2.4** Criar `ThoughtJournal.Web` (`dotnet new mvc`) com referência ao Domain e ao Infrastructure.
-- [ ] **2.5** Criar `ThoughtJournal.Domain.Tests` (`dotnet new xunit`) com referência ao Domain.
-- [ ] **2.6** Juntar todos os projetos à solução (`dotnet sln add ...`).
-- [ ] **2.7** Em `Web`, instalar o pacote NuGet do InertiaCore e configurá-lo no `Program.cs` (serviços, middleware e Vite helper), como fizeste nos vídeos.
-- [ ] **2.8** Criar a pasta `ClientApp` com Vite + React + TypeScript.
-- [ ] **2.9** Instalar no frontend: `@inertiajs/react`, `@mui/material`, `@emotion/react`, `@emotion/styled`, `@mui/icons-material`, `@mui/x-date-pickers` e `dayjs`.
-- [ ] **2.10** Configurar o `vite.config.ts` para gerar os ficheiros em `wwwroot` e o ponto de entrada da app Inertia (`createInertiaApp` com resolução de páginas em `Pages/`).
-- [ ] **2.11** Criar o layout base em React (`AppLayout`): barra de topo com o nome da app e as ligações "Pensamentos" e "Etiquetas".
-- [ ] **2.12** Criar uma página `Pages/Home.tsx` e uma ação no controlador que a devolve com `Inertia.Render`.
-- [ ] **2.13** Correr a app e confirmar que a página React aparece servida pelo ASP.NET Core.
-- [ ] **2.14** Configurar o tema MUI (cores, tipografia) num ficheiro `theme.ts`.
+- [ ] **2.2** Criar `ThoughtJournal.Web` (`dotnet new mvc`) com referência ao Domain e ao Infrastructure.
+- [ ] **2.3** Criar `ThoughtJournal.Domain.Tests` (`dotnet new xunit`) com referência ao Domain.
+- [ ] **2.4** Juntar todos os projetos à solução (`dotnet sln add ...`).
+- [ ] **2.5** Em `Web`, instalar o pacote NuGet do InertiaCore e configurá-lo no `Program.cs` (serviços, middleware e Vite helper), como fizeste nos vídeos.
+- [ ] **2.6** Criar a pasta `ClientApp` com Vite + React + TypeScript.
+- [ ] **2.7** Instalar no frontend: `@inertiajs/react`, `@mui/material`, `@emotion/react`, `@emotion/styled`, `@mui/icons-material`, `@mui/x-date-pickers` e `dayjs`.
+- [ ] **2.8** Configurar o `vite.config.ts` para gerar os ficheiros em `wwwroot` e o ponto de entrada da app Inertia (`createInertiaApp` com resolução de páginas em `Pages/`).
+- [ ] **2.9** Criar o layout base em React (`AppLayout`): barra de topo com o nome da app e as ligações "Pensamentos" e "Etiquetas".
+- [ ] **2.10** Criar uma página `Pages/Home.tsx` e uma ação no controlador que a devolve com `Inertia.Render`.
+- [ ] **2.11** Correr a app e confirmar que a página React aparece servida pelo ASP.NET Core.
+- [ ] **2.12** Configurar o tema MUI (cores, tipografia) num ficheiro `theme.ts`.
 
 **Pronto quando:** `dotnet run` abre uma página React dentro do layout, sem erros na consola.
 
